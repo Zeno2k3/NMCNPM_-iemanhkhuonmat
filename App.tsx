@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, StatusBar } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { LoginScreen, SplashScreen } from './src/screens'
 import { NavigationContainer } from '@react-navigation/native'
@@ -16,9 +16,14 @@ const App = () => {
   },[]) // chi chay 1 lan
 
   return (
-    isShownSplashScreen ? <SplashScreen/> : <NavigationContainer>
-      <LoginScreen/>
-    </NavigationContainer> 
+    <>
+    <StatusBar barStyle={'dark-content'} backgroundColor={'transparent'} translucent/>
+    {
+      !isShownSplashScreen ? <SplashScreen/> : <NavigationContainer>
+        <LoginScreen/>
+      </NavigationContainer>
+    }
+    </> 
   )
 }
 

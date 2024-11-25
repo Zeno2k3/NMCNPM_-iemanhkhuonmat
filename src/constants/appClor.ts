@@ -1,3 +1,3 @@
 export const appColor = {
-    pimary : '#ffffff'
+    pimary : '#000000'
 }
