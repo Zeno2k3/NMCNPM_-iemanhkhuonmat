@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, ActivityIndicator } from 'react-native'
+import { View, Text, Image, StyleSheet, ActivityIndicator, ImageBackground } from 'react-native'
 import React from 'react'
 import { appInfos } from '../constants/appInfos'
 import { appColor } from '../constants/appClor'
@@ -6,7 +6,7 @@ import { appColor } from '../constants/appClor'
 const SplashScreen = () => {
   return (
     <>
-      <Image 
+      <Image
       style={styles.image}
       source={require('../assets/image/logo.png')}
       />
@@ -22,8 +22,9 @@ export default SplashScreen
 const styles = StyleSheet.create(
   {
     image: {
-      width: appInfos.size.WIDTH * 1,
-      resizeMode: 'center'
+      flex: 2,
+      width: appInfos.size.WIDTH,
+      resizeMode: 'contain'
     },
   }
 )

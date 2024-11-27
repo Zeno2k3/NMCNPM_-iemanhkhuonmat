@@ -4,6 +4,7 @@ import { LoginScreen, SplashScreen } from './src/screens'
 import { NavigationContainer } from '@react-navigation/native'
 import { useAsyncStorage } from '@react-native-async-storage/async-storage'
 import TabNavigator from './src/navigators/TabNavigator'
+import AuthNavigator from './src/navigators/AuthNavigator'
 
 const App = () => {
   const [isShownSplashScreen, setIsShownSplashScreen] = useState(true)
@@ -35,7 +36,7 @@ const App = () => {
       isShownSplashScreen ? (<SplashScreen/>) : (
       <NavigationContainer>
         {
-        assetToken ? <TabNavigator/> : <LoginScreen/>
+          assetToken ? <TabNavigator/> : <AuthNavigator/>
         } 
       </NavigationContainer>)
     }
