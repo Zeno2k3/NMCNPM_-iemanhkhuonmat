@@ -2,26 +2,42 @@ import { View, Text, StatusBar } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { LoginScreen, SplashScreen } from './src/screens'
 import { NavigationContainer } from '@react-navigation/native'
+import { useAsyncStorage } from '@react-native-async-storage/async-storage'
+import TabNavigator from './src/navigators/TabNavigator'
 
 const App = () => {
   const [isShownSplashScreen, setIsShownSplashScreen] = useState(true)
+  const [assetToken, setassetToken] = useState('')
+  
+  const {getItem} = useAsyncStorage('assetToken')
 
   useEffect(() => {
     // ham tao
     const timeout = setTimeout(() => {
       setIsShownSplashScreen(false)
     },1500)
+    checkLogin();
     // ham huy
     return () => clearTimeout(timeout);
   },[]) // chi chay 1 lan
 
+  const checkLogin = async () => {
+    const token = await getItem();
+    if(token){
+      setassetToken(token)
+    }
+  }
+
   return (
     <>
-    <StatusBar barStyle={'dark-content'} backgroundColor={'transparent'} translucent/>
+     <StatusBar barStyle={'dark-content'} backgroundColor={'transparent'} translucent/>
     {
-      !isShownSplashScreen ? <SplashScreen/> : <NavigationContainer>
-        <LoginScreen/>
-      </NavigationContainer>
+      isShownSplashScreen ? (<SplashScreen/>) : (
+      <NavigationContainer>
+        {
+        assetToken ? <TabNavigator/> : <LoginScreen/>
+        } 
+      </NavigationContainer>)
     }
     </> 
   )
