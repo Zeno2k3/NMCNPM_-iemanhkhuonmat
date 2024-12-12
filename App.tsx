@@ -21,14 +21,12 @@ const App = () => {
     // ham huy
     return () => clearTimeout(timeout);
   },[]) // chi chay 1 lan
-
   const checkLogin = async () => {
     const token = await getItem();
     if(token){
       setassetToken(token)
     }
   }
-
   return (
     <>
      <StatusBar barStyle={'dark-content'} backgroundColor={'transparent'} translucent/>
@@ -43,5 +41,4 @@ const App = () => {
     </> 
   )
 }
-
 export default App
