@@ -36,7 +36,7 @@ const App = () => {
       isShownSplashScreen ? (<SplashScreen/>) : (
       <NavigationContainer>
         {
-          assetToken ? <TabNavigator/> : <AuthNavigator/>
+          !assetToken ? <TabNavigator/> : <AuthNavigator/>
         } 
       </NavigationContainer>)
     }
