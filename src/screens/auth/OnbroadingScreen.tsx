@@ -63,13 +63,13 @@ const OnbroadingScreen = ({navigation}:any) => {
         >
           <TouchableOpacity
             style={{
-              backgroundColor: '#007BFF',
+              backgroundColor: '#0054A6',
               width: appInfos.size.WIDTH* 0.8,
               height: appInfos.size.WIDTH * 0.15,
               borderRadius: 13,
               justifyContent: 'center',
               alignItems: 'center',
-              elevation: 5
+              elevation: 5,
             }}
             onPress={() => {
               navigation.navigate('LoginScreen')

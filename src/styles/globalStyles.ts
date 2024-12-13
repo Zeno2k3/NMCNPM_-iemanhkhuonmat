@@ -1,5 +1,7 @@
 import { StyleSheet } from "react-native";
 import { appColor } from "../constants/appClor";
+import { fontFamilies } from "../constants/appfontFamilies";
+import { appInfos } from "../constants/appInfos";
 
 export const globalStyles = StyleSheet.create({
     container: {
@@ -8,10 +10,20 @@ export const globalStyles = StyleSheet.create({
     },
 
     button: {
-        
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: appInfos.size.WIDTH* 0.8,
+        height: appInfos.size.WIDTH * 0.15,
+        borderRadius: 13,
+        elevation: 12
     },
 
     text: {
+        color: appColor.black,
+        fontSize: 16,
+        fontFamily: fontFamilies.regular
+    },
+    shardow: {
 
-    }
+    },
 })
