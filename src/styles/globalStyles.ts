@@ -13,7 +13,7 @@ export const globalStyles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         width: appInfos.size.WIDTH* 0.8,
-        height: appInfos.size.WIDTH * 0.15,
+        height: appInfos.size.HEIGHT * 0.065,
         borderRadius: 13,
         elevation: 12
     },
@@ -26,4 +26,11 @@ export const globalStyles = StyleSheet.create({
     shardow: {
 
     },
+
+    row: {
+        width: appInfos.size.WIDTH * 0.5,
+        marginBottom: 10,
+        flexDirection: 'row',
+        justifyContent: 'flex-start'
+    }
 })

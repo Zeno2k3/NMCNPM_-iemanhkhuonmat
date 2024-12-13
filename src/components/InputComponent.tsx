@@ -32,7 +32,7 @@ const InputComponent = (props: Props) => {
             {icon_affix ?? icon_affix}
             <TextInput
                 style = {[styles.inputtext, globalStyles.text]}
-                keyboardType={keyBoardType ?? isOTP ? 'numeric' : 'default'}
+                keyboardType={keyBoardType ?? 'default'}
                 value={value}
                 placeholder={placeHolder}
                 secureTextEntry = {isOTP || isShowPassWord}

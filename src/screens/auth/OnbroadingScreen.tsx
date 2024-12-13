@@ -4,6 +4,7 @@ import Swiper from 'react-native-swiper'
 import { appInfos } from '../../constants/appInfos'
 import { globalStyles } from '../../styles/globalStyles'
 import { appColor } from '../../constants/appClor'
+import { ButtonComponent } from '../../components'
 
 const OnbroadingScreen = ({navigation}:any) => {
   const [index, setIndex] = useState(0);
@@ -61,22 +62,7 @@ const OnbroadingScreen = ({navigation}:any) => {
             alignItems: 'center',
           }}
         >
-          <TouchableOpacity
-            style={{
-              backgroundColor: '#0054A6',
-              width: appInfos.size.WIDTH* 0.8,
-              height: appInfos.size.WIDTH * 0.15,
-              borderRadius: 13,
-              justifyContent: 'center',
-              alignItems: 'center',
-              elevation: 5,
-            }}
-            onPress={() => {
-              navigation.navigate('LoginScreen')
-            }}
-          >
-            <Text style={{ color: '#fff', fontWeight: 'bold', }}>Bắt đầu Thôi</Text>
-          </TouchableOpacity>
+          <ButtonComponent text='Bắt đầu thôi!' type='primary' onPress={() => navigation.navigate('LoginScreen')}/>
         </View>
         </View>
       </Swiper>

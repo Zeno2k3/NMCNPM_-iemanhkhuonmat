@@ -31,7 +31,6 @@ const LoginScreen = ({navigation}: any) => {
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'flex-start'
-          
           }}
         >
           <SpaceComponent width={10}/>
@@ -80,7 +79,7 @@ const LoginScreen = ({navigation}: any) => {
             isPassWord
         />
           <SpaceComponent height={20}/>
-          <ButtonComponent text='Đăng Nhập' type='primary'/>
+          <ButtonComponent text='Đăng Nhập' type='primary'onPress={() => navigation.navigate('TabGVNavigatior')}/>
           <ButtonComponent text='Quên mật khẩu' type='link' 
           onPress={() => navigation.navigate('EmailAdressScreen')}
           />
