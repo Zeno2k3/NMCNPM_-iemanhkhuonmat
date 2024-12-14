@@ -1,4 +1,5 @@
 import ButtonComponent from "./ButtonComponent";
+import HeaderComponent from "./HeaderComponent";
 import InputComponent from "./InputComponent";
 import SectionComponent from "./SectionComponent";
 import SpaceComponent from "./SpaceComponent";
@@ -10,4 +11,5 @@ export {
     SectionComponent,
     InputComponent,
     SpaceComponent,
+    HeaderComponent
 }

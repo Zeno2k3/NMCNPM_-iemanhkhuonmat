@@ -17,7 +17,6 @@ export const globalStyles = StyleSheet.create({
         borderRadius: 13,
         elevation: 12
     },
-
     text: {
         color: appColor.black,
         fontSize: 16,
