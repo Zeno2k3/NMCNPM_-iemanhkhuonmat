@@ -13,6 +13,20 @@ const LoginScreen = ({navigation}: any) => {
   const [password, setPassword] = useState('');
   const [isEnabled, setIsEnabled] = useState(false);
 
+  const handleLogin = async () => {
+    const api = `http://192.168.107.248:3001/hello`;
+    try {
+      const res = await fetch(api, {
+        method: 'get'
+      })
+
+      console.log(res)
+      
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <>
       <StatusBar barStyle={'dark-content'} translucent backgroundColor={'transparent'}/>

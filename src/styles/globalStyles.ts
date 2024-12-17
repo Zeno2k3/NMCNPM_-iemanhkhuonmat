@@ -22,10 +22,9 @@ export const globalStyles = StyleSheet.create({
         fontSize: 16,
         fontFamily: fontFamilies.regular
     },
-    shardow: {
-
+    shadow: {
+         overflow: 'hidden'
     },
-
     row: {
         width: appInfos.size.WIDTH * 0.5,
         marginBottom: 10,

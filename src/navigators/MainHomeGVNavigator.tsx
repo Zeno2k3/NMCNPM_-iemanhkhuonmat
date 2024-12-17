@@ -1,7 +1,6 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { HomeGVScreen } from '../screens';
-import ListClassScreen from '../screens/GiangVien/home/ListClassScreen';
+import { HomeGVScreen, ListClassScreen } from '../screens';
 
 const MainHomeGVNavigator = () => {
     const Stack = createNativeStackNavigator();

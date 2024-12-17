@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         width: appInfos.size.WIDTH,
         height: 80,
         backgroundColor: appColor.gray2,
-        elevation: 6,
+        elevation: 9,
         paddingTop: 30
     },
     headerrow: {

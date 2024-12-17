@@ -1,12 +1,11 @@
 import React, { ReactNode } from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { ProfileScreen, SettingGVScreen } from '../screens';
-import MainHomeGVNavigator from './MainHomeGVNavigator';
-import TabNavigator from './TabNavigator';
+import { ProfileScreen} from '../screens';
 import SetingsNavigator from './SetingsNavigator';
 import { appColor } from '../constants/appClor';
-import { Element3, ElementEqual, Setting2, UserSquare } from 'iconsax-react-native';
+import { Element3, Setting2, UserSquare } from 'iconsax-react-native';
 import { TextComponent } from '../components';
+import MainHomeGVNavigator from './MainHomeGVNavigator';
 
 const TabGVNavigatior = () => {
     const Tab = createBottomTabNavigator();

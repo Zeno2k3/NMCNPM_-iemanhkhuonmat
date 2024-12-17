@@ -3,6 +3,7 @@ import LoginScreen from "./auth/LoginScreen"
 import OnbroadingScreen from "./auth/OnbroadingScreen"
 import OtpScreen from "./auth/OtpScreen"
 import SetPassWord from "./auth/SetPassWord"
+import ClassItem from "./GiangVien/home/components/ClassItem"
 import HomeGVScreen from "./GiangVien/home/HomeGVScreen"
 import ListClassScreen from "./GiangVien/home/ListClassScreen"
 import ProfileScreen from "./GiangVien/ProfileScreen"
@@ -30,4 +31,5 @@ export {
     ProfileScreen,
     SettingGVScreen,
     ListClassScreen,
+    ClassItem,
 }
