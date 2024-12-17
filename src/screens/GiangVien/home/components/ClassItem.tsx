@@ -41,14 +41,14 @@ export default ClassItem
 const styles = StyleSheet.create({
   container: {
     width: appInfos.size.WIDTH * 0.9,
-    backgroundColor: appColor.white,
+    backgroundColor: appColor.gray2,
     paddingHorizontal: 15,
     paddingVertical: 10,
     borderRadius: 20,
-    elevation: 3,
-    marginBottom: 30,
+    elevation: 5,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginVertical: 15
   }
 })

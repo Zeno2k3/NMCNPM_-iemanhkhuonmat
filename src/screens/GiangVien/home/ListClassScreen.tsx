@@ -27,7 +27,7 @@ const ListClassScreen = ({navigation}: any) => {
         
         <View style = {styles.container}>
           <ScrollView showsVerticalScrollIndicator = {false}>
-            <ClassItem name={'Nhập môn công nghê phần mềm'} phong={'B.214'} thu={'2'} gio={'12:30 - 16:30'} soluong={50} onPress={() => {}}/>
+            <ClassItem name={'Nhập môn công nghê phần mềm'} phong={'B.214'} thu={'2'} gio={'12:30 - 16:30'} soluong={50} onPress={() => {navigation.navigate('MainMHScreen')}}/>
             <ClassItem name={'Nhập môn công nghê phần mềm'} phong={'B.214'} thu={'2'} gio={'12:30 - 16:30'} soluong={50} onPress={() => {}}/>
             <ClassItem name={'Nhập môn công nghê phần mềm'} phong={'B.214'} thu={'2'} gio={'12:30 - 16:30'} soluong={50} onPress={() => {}}/>
             <ClassItem name={'Nhập môn công nghê phần mềm'} phong={'B.214'} thu={'2'} gio={'12:30 - 16:30'} soluong={50} onPress={() => {}}/>
@@ -46,6 +46,6 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       alignItems: 'center',
-      backgroundColor: appColor.gray,
+      backgroundColor: appColor.white,
     },
 })

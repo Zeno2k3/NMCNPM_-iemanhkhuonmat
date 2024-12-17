@@ -23,7 +23,7 @@ export const globalStyles = StyleSheet.create({
         fontFamily: fontFamilies.regular
     },
     shadow: {
-         overflow: 'hidden'
+        overflow: 'hidden'
     },
     row: {
         width: appInfos.size.WIDTH * 0.5,
