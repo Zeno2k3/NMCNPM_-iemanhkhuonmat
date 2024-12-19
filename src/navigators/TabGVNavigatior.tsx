@@ -14,7 +14,7 @@ const TabGVNavigatior = () => {
             headerShown: false,
             tabBarStyle: {
                 borderTopWidth: 1,
-                height: 60,
+                height:60,
                 justifyContent: 'center',
                 alignItems: 'center',
             },

@@ -1,57 +1,37 @@
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {ReactNode} from 'react';
-import {appColor} from '../../../../constants/appClor';
-import {TextComponent} from '../../../../components';
-import DSSVScreen from '../monhoc/DSSVScreen';
-import DiemDanhScreen from '../monhoc/DiemDanhScreen';
-import {Element3, UserSquare} from 'iconsax-react-native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import DssinhvienCddScreen from '../diemdanhsinhvien/DssinhvienCddScreen';
+import { Text, View } from 'react-native';
+import DanhSachDiemDanh from '../diemdanhsinhvien/DanhSachDiemDanh';
 
 const TabSvNavigator = () => {
-  const Tab = createBottomTabNavigator();
+  const Tab = createMaterialTopTabNavigator();
   return (
     <Tab.Navigator
-      screenOptions={({route}) => ({
-        headerShown: false,
-        tabBarStyle: {
-          borderTopWidth: 1,
-          height: 60,
-          justifyContent: 'center',
-          alignItems: 'center',
-        },
-        tabBarIcon: ({focused, color, size}) => {
-          let icon: ReactNode;
-          color = focused ? appColor.blue : appColor.black;
-          switch (route.name) {
-            case 'DSSV':
-              icon = focused ? (
-                <UserSquare size="24" color={appColor.blue} variant="Bold" />
-              ) : (
-                <UserSquare size="24" color={appColor.black} variant="Linear" />
-              );
-              break;
-          }
-          switch (route.name) {
-            case 'Điểm Danh':
-              icon = focused ? (
-                <Element3 size="24" color={appColor.blue} variant="Bold" />
-              ) : (
-                <Element3 size="24" color={appColor.black} variant="Linear" />
-              );
-              break;
-          }
-          return icon;
-        },
-        tabBarLabel({focused}) {
-          return (
-            <TextComponent
-              text={route.name}
-              color={focused ? appColor.blue : appColor.black}
-            />
-          );
-        },
-      })}>
-      <Tab.Screen name="Sinh Viên Chưa Điểm Danh" component={DSSVScreen} />
-      <Tab.Screen name="Chỉnh Sửa" component={DiemDanhScreen} />
+    screenOptions={{
+      tabBarLabelStyle: { fontSize: 12 },
+    }}>
+      <Tab.Screen
+        name="Danh Sách SV"
+        component={DanhSachDiemDanh}
+        options={{
+          tabBarLabel: ({ color }) => (
+            <View style={{ alignItems: 'center',flexDirection: 'row' }}>
+              <Text style={{ fontSize: 10, color }}>Danh Sách SV</Text>
+            </View>
+          ),
+        }}
+      />
+     <Tab.Screen
+        name="SV chưa điểm danh"
+        component={DssinhvienCddScreen}
+        options={{
+          tabBarLabel: ({ color }) => (
+            <View style={{ alignItems: 'center',flexDirection: 'row'}}>
+              <Text style={{ fontSize: 10, color }}>SV chưa điểm danh</Text>
+            </View>
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };

@@ -6,5 +6,8 @@ export const appColor = {
     gray2: '#D9D9D9',
     blue: '#649DF2',
     yellow: '#DBE961',
-    pink: '#E7C4C4'
+    pink: '#E7C4C4',
+    xanhla: '#6BBF59',
+    red: '#DD3D43',
+    blue2: "#00BFFF",
 }
