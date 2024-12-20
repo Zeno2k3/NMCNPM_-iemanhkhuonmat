@@ -1,13 +1,13 @@
 import React, { ReactNode } from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { ProfileScreen} from '../screens';
-import SetingsNavigator from './SetingsNavigator';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { LichSuScreen, SettingScreen, ThongKeScreen } from '../screens';
+import MainHomeSVScreen from './MainHomeSVScreen';
+import DiemDanhSv from './DiemDanhSv';
 import { appColor } from '../constants/appClor';
-import { Element3, Setting2, UserSquare } from 'iconsax-react-native';
+import { Chart, Chart2, ChartCircle, Element3, Maximize, Maximize2, Setting2, UserSquare } from 'iconsax-react-native';
 import { TextComponent } from '../components';
-import MainHomeGVNavigator from './MainHomeGVNavigator';
 
-const TabGVNavigatior = () => {
+const TabSVNavigator = () => {
     const Tab = createBottomTabNavigator();
     return (
         <Tab.Navigator screenOptions={({route}) => ({
@@ -17,7 +17,6 @@ const TabGVNavigatior = () => {
                 height:60,
                 justifyContent: 'center',
                 alignItems: 'center',
-               
             },
             tabBarIcon:({focused, color, size}) => {
                 let icon: ReactNode;
@@ -28,7 +27,17 @@ const TabGVNavigatior = () => {
                     break;
                 }
                 switch (route.name) {
-                    case 'Trang Chủ':
+                    case 'Thống Kê':
+                    icon =  focused ? <Chart2 size="24" color={appColor.blue} variant= 'Bold' /> : <Chart2 size="24" color={appColor.black} variant="Linear"/> 
+                    break;
+                }
+                switch (route.name) {
+                    case 'Điểm Danh':
+                    icon =  focused ? <Maximize2 size="24" color={appColor.blue} variant="Bold" /> : <Maximize2 size="24" color={appColor.black} variant="Linear"/> 
+                    break;
+                }
+                switch (route.name) {
+                    case 'Lịch Sử':
                     icon =  focused ? <Element3 size="24" color={appColor.blue} variant="Bold" /> : <Element3 size="24" color={appColor.black} variant="Linear"/> 
                     break;
                 }
@@ -51,11 +60,13 @@ const TabGVNavigatior = () => {
                 )
             },
         })}>
-            <Tab.Screen name='Cá Nhân' component={ProfileScreen}/>
-            <Tab.Screen name='Trang Chủ' component={MainHomeGVNavigator}/>
-            <Tab.Screen name='Cài Đặt' component={SetingsNavigator}/>
+            <Tab.Screen name='Cá Nhân' component={MainHomeSVScreen}/>
+            <Tab.Screen name='Thống Kê' component={ThongKeScreen}/>
+            <Tab.Screen name='Điểm Danh' component={DiemDanhSv}/>
+            <Tab.Screen name='Lịch Sử' component={LichSuScreen}/>
+            <Tab.Screen name='Cài Đặt' component={SettingScreen}/>
         </Tab.Navigator>
     )
 }
 
-export default TabGVNavigatior
+export default TabSVNavigator

@@ -6,7 +6,6 @@ import { appColor } from '../../../../constants/appClor'
 
 const DanhSachDiemDanh = () => {
   const [hidenIcon, setHidenIcon] = useState('');
-
   return (
     <View style = {styles.container}>
         <ScrollView>

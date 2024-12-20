@@ -6,6 +6,7 @@ import SetPassWord from "./auth/SetPassWord"
 import ClassItem from "./GiangVien/home/components/ClassItem"
 import HomeGVScreen from "./GiangVien/home/HomeGVScreen"
 import ListClassScreen from "./GiangVien/home/ListClassScreen"
+import DiemDanhScreen from "./GiangVien/home/monhoc/DiemDanhScreen"
 import DSSVScreen from "./GiangVien/home/monhoc/DSSVScreen"
 import MainMHScreen from "./GiangVien/home/monhoc/MainMHScreen"
 import TabSvNavigator from "./GiangVien/home/navigators/TabSvNavigator"
@@ -38,5 +39,5 @@ export {
     TabSvNavigator,
     MainMHScreen,
     DSSVScreen,
-    
+    DiemDanhScreen,
 }

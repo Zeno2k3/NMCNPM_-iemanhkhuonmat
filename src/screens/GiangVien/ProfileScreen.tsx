@@ -1,7 +1,6 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { SpaceComponent, TextComponent } from '../../components'
-import { Image } from 'react-native'
 import { LogoProfileGV } from '../../assets/svg'
 import { globalStyles } from '../../styles/globalStyles'
 import { fontFamilies } from '../../constants/appfontFamilies'
@@ -31,7 +30,6 @@ const ProfileScreen = () => {
           <TextComponent text='Tiến Sĩ'/>
       </View>
     </View>
-
   )
 }
 

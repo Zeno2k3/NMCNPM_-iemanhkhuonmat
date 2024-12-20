@@ -12,6 +12,12 @@ const LoginScreen = ({navigation}: any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isEnabled, setIsEnabled] = useState(false);
+  const [isSv , setisSv ] = useState(true);
+
+  const handleCheckSV = () => {
+    setIsEnabled(!isEnabled);
+    setisSv(!isSv)
+  }
 
   const handleLogin = async () => {
     const api = `http://192.168.107.248:3001/hello`;
@@ -67,7 +73,7 @@ const LoginScreen = ({navigation}: any) => {
               }}
               offColor= {appColor.white}
               size='large'
-              onToggle={() => setIsEnabled(!isEnabled)}
+              onToggle={() =>handleCheckSV()}
            />
         </View>
         <View  
@@ -93,7 +99,7 @@ const LoginScreen = ({navigation}: any) => {
             isPassWord
         />
           <SpaceComponent height={20}/>
-          <ButtonComponent text='Đăng Nhập' type='primary'onPress={() => navigation.navigate('TabGVNavigatior')}/>
+          <ButtonComponent text='Đăng Nhập' type='primary'onPress={() => {isSv ?  navigation.navigate('TabSVNavigatior'): navigation.navigate('TabGVNavigatior')}}/>
           <ButtonComponent text='Quên mật khẩu' type='link' 
           onPress={() => navigation.navigate('EmailAdressScreen')}
           />

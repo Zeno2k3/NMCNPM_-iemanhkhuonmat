@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, ActivityIndicator, ImageBackground } from 'react-native'
+import { Image, StyleSheet, ActivityIndicator } from 'react-native'
 import React from 'react'
 import { appInfos } from '../constants/appInfos'
 import { appColor } from '../constants/appClor'

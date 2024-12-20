@@ -1,11 +1,21 @@
-import { View, Text } from 'react-native'
+import { View} from 'react-native'
 import React from 'react'
-
-const SettingScreen = () => {
+import { ButtonComponent, HeaderComponent, SpaceComponent } from '../../components'
+import { Setting } from '../../assets/svg'
+import { appColor } from '../../constants/appClor'
+const SettingScreen = ({navigation}: any) => {
   return (
-    <View>
-      <Text>SettingScreen</Text>
-    </View>
+    <>
+      <HeaderComponent title='Cài đặt' icon = {<Setting/>}/>
+     
+      <View style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}>
+        <ButtonComponent text="Đăng Xuất" type='primary' onPress={() => {navigation.navigate('LoginScreen')}}/>
+      </View>
+    </>
   )
 }
 

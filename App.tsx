@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { LoginScreen, SplashScreen } from './src/screens'
 import { NavigationContainer } from '@react-navigation/native'
 import { useAsyncStorage } from '@react-native-async-storage/async-storage'
-import TabNavigator from './src/navigators/TabNavigator'
+import TabNavigator from './src/navigators/TabSVNavigator'
 import AuthNavigator from './src/navigators/AuthNavigator'
 
 const App = () => {

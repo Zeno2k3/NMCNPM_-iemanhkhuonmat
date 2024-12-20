@@ -6,10 +6,10 @@ import { TextComponent } from '../../../../components';
 import { fontFamilies } from '../../../../constants/appfontFamilies';
 
 interface Props {
-    name: string;
-    mssv: string;
-    icon?: ReactNode;
-    backGround?: boolean
+  name: string;
+  mssv: string;
+  icon?: ReactNode;
+  backGround?: boolean
 }
 
 const StudentItem = (props: Props) => {

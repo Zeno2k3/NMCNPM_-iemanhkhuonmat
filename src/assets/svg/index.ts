@@ -7,6 +7,7 @@ import Setting from './setting-icon.svg'
 import LogoHeader from './Logo-HomeGV.svg'
 import LogoQuanly from './quanly-img.svg'
 import DSSV from './dssv.svg'
+import Tich from './tich.svg'
 
 export {
     Email,
@@ -18,4 +19,5 @@ export {
     LogoHeader,
     LogoQuanly,
     DSSV,
+    Tich
 }
