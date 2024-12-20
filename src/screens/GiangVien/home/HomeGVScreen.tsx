@@ -50,7 +50,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   conten: {
-    
     width: appInfos.size.WIDTH,
     margin: 30
   }

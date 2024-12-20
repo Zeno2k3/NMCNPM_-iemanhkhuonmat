@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     elevation: 3,
     borderRadius: 20,
     backgroundColor: appColor.white,
+    zIndex: 10
   },
   children: {
     position: 'relative',

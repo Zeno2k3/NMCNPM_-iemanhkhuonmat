@@ -1,9 +1,10 @@
 import React from 'react'
-import { ButtonSelect, HeaderComponent } from '../../components'
+import { ButtonSelect, HeaderComponent, SpaceComponent } from '../../components'
 import { LichSu } from '../../assets/svg'
-import { StyleSheet, View } from 'react-native'
+import { ScrollView, StyleSheet, View } from 'react-native'
 import { globalStyles } from '../../styles/globalStyles'
 import { appColor } from '../../constants/appClor'
+import ItemMonHoc from './components/ItemMonHoc'
 
 const LichSuScreen = () => {
   const data_namhoc = [
@@ -27,6 +28,23 @@ const LichSuScreen = () => {
             <ButtonSelect name={"Năm học"} list={data_namhoc}/>
             <ButtonSelect name={"Học Kì"} list={data_hocki}/>
         </View>
+        <View style= {styles.table}>
+        <ScrollView>
+          <ItemMonHoc name= {'Nhập môn công nghệ phần mền'} vang={0} tre={0}/>
+          <ItemMonHoc name= {'Nhập môn công nghệ phần mền'} vang={0} tre={0}/>
+          <ItemMonHoc name= {'Nhập môn công nghệ phần mền'} vang={0} tre={0}/>
+          <ItemMonHoc name= {'Nhập môn công nghệ phần mền'} vang={0} tre={0}/>
+          <ItemMonHoc name= {'Nhập môn công nghệ phần mền'} vang={0} tre={0}/>
+          <ItemMonHoc name= {'Nhập môn công nghệ phần mền'} vang={0} tre={0}/>
+          <ItemMonHoc name= {'Nhập môn công nghệ phần mền'} vang={0} tre={0}/>
+          <ItemMonHoc name= {'Nhập môn công nghệ phần mền'} vang={0} tre={0}/>
+          <ItemMonHoc name= {'Nhập môn công nghệ phần mền'} vang={0} tre={0}/>
+          <ItemMonHoc name= {'Nhập môn công nghệ phần mền'} vang={0} tre={0}/>
+          <ItemMonHoc name= {'Nhập môn công nghệ phần mền'} vang={0} tre={0}/>
+          <ItemMonHoc name= {'Nhập môn công nghệ phần mền'} vang={0} tre={0}/>
+          <ItemMonHoc name= {'Nhập môn công nghệ phần mền'} vang={0} tre={0}/>
+        </ScrollView>
+        </View>
     </View>
    </>
   )
@@ -40,5 +58,10 @@ const styles = StyleSheet.create({
     padding: 30,
     flexDirection: 'row',
     justifyContent: 'space-between'
+  },
+  table: {
+    flex: 9,
+    alignItems: 'center',
+    position: 'relative',
   }
 })
