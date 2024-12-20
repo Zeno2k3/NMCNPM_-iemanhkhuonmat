@@ -4,6 +4,10 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Chúng tôi cần sử dụng camera để chụp ảnh và quay video.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Chúng tôi cần sử dụng microphone để quay video.</string>
 	<key>CFBundleDisplayName</key>
 	<string>DiemDanhKhuonMat</string>
 	<key>CFBundleExecutable</key>

@@ -1,11 +1,12 @@
-import { View, Text } from 'react-native'
 import React from 'react'
+import { HeaderComponent } from '../../components'
+import { ThongKe } from '../../assets/svg'
 
 const ThongKeScreen = () => {
   return (
-    <View>
-      <Text>ThongKeScreen</Text>
-    </View>
+    <>
+      <HeaderComponent title={'Thống Kê'} icon = {<ThongKe/>} />
+    </>
   )
 }
 

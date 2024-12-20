@@ -8,6 +8,7 @@ import LogoHeader from './Logo-HomeGV.svg'
 import LogoQuanly from './quanly-img.svg'
 import DSSV from './dssv.svg'
 import Tich from './tich.svg'
+import ThongKe from './thongke.svg'
 
 export {
     Email,
@@ -19,5 +20,6 @@ export {
     LogoHeader,
     LogoQuanly,
     DSSV,
-    Tich
+    Tich,
+    ThongKe
 }

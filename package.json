@@ -30,6 +30,7 @@
     "react-native-svg-transformer": "^1.5.0",
     "react-native-swiper": "^1.6.0",
     "react-native-vector-icons": "^10.2.0",
+    "react-native-vision-camera": "^4.6.3",
     "toggle-switch-react-native": "^3.3.0"
   },
   "devDependencies": {
