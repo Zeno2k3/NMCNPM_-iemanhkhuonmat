@@ -4,6 +4,7 @@ import InputComponent from "./InputComponent";
 import SectionComponent from "./SectionComponent";
 import SpaceComponent from "./SpaceComponent";
 import TextComponent from "./TextComponent";
+import ButtonSelect from "./ButtonSelect";
 
 export {
     TextComponent,
@@ -11,5 +12,6 @@ export {
     SectionComponent,
     InputComponent,
     SpaceComponent,
-    HeaderComponent
+    HeaderComponent,
+    ButtonSelect,
 }

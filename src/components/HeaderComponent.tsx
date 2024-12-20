@@ -40,8 +40,7 @@ const styles = StyleSheet.create({
         height: 80,
         backgroundColor: appColor.gray2,
         elevation: 20,
-        paddingTop: 30,
-        shadowColor: appColor.black
+        paddingTop: 30,   
     },
     headerrow: {
         flex: 1,

@@ -18,6 +18,11 @@ const DSSVScreen = ({navigation}: any) => {
           <StudentItem name='Hà Thái Khánh' mssv='49.01.104.087'/>
           <StudentItem name='Hà Thái Khánh' mssv='49.01.104.087'/>
           <StudentItem name='Hà Thái Khánh' mssv='49.01.104.087'/>
+          <StudentItem name='Hà Thái Khánh' mssv='49.01.104.087'/>
+          <StudentItem name='Hà Thái Khánh' mssv='49.01.104.087'/>
+          <StudentItem name='Hà Thái Khánh' mssv='49.01.104.087'/>
+          <StudentItem name='Hà Thái Khánh' mssv='49.01.104.087'/>
+          <StudentItem name='Hà Thái Khánh' mssv='49.01.104.087'/>
         </ScrollView>
       </View>
     </>

@@ -9,6 +9,7 @@ import LogoQuanly from './quanly-img.svg'
 import DSSV from './dssv.svg'
 import Tich from './tich.svg'
 import ThongKe from './thongke.svg'
+import LichSu from './lichsu.svg'
 
 export {
     Email,
@@ -21,5 +22,6 @@ export {
     LogoQuanly,
     DSSV,
     Tich,
-    ThongKe
+    ThongKe,
+    LichSu
 }
