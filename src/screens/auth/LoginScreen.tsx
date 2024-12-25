@@ -1,5 +1,5 @@
 import {ImageBackground,  StatusBar,  View } from 'react-native'
-import React, { useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import { ButtonComponent, InputComponent, } from '../../components'
 import { Email, Login, Login2, } from '../../assets/svg'
 import { Lock} from 'iconsax-react-native'
@@ -7,32 +7,41 @@ import { appInfos } from '../../constants/appInfos'
 import SpaceComponent from '../../components/SpaceComponent'
 import { appColor } from '../../constants/appClor'
 import ToggleSwitch from 'toggle-switch-react-native'
+import AuthAPI from '../../apis/authApi'
+import authenticationAPI from '../../apis/authApi'
 
 const LoginScreen = ({navigation}: any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isEnabled, setIsEnabled] = useState(false);
   const [isSv , setisSv ] = useState(true);
-
   const handleCheckSV = () => {
     setIsEnabled(!isEnabled);
     setisSv(!isSv)
   }
-
   const handleLogin = async () => {
-    const api = `http://192.168.107.248:3001/hello`;
     try {
-      const res = await fetch(api, {
-        method: 'get'
-      })
-
-      console.log(res)
-      
-    } catch (error) {
+      const res = await authenticationAPI.HandAuthentication('/hello')
+    } 
+    catch(error){
       console.log(error)
     }
   }
-
+  useLayoutEffect(() => {
+      navigation.getParent()?.setOptions({
+        tabBarStyle: {display: 'none'},
+      });
+      return () => {
+        navigation.getParent()?.setOptions({
+          tabBarStyle: {
+            borderTopWidth: 0,
+            height: 80,
+            justifyContent: 'center',
+            alignItems: 'center',
+          },
+        });
+      };
+    }, [navigation]);
   return (
     <>
       <StatusBar barStyle={'dark-content'} translucent backgroundColor={'transparent'}/>
@@ -103,9 +112,10 @@ const LoginScreen = ({navigation}: any) => {
           <ButtonComponent text='Quên mật khẩu' type='link' 
           onPress={() => navigation.navigate('EmailAdressScreen')}
           />
+          <ButtonComponent text='Test' type='link' 
+          onPress={handleLogin}
+          />
         </View>
-
-
       </ImageBackground>
     </>
   )
