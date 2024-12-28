@@ -8,7 +8,7 @@ import { Chart, Chart2, ChartCircle, Element3, Maximize, Maximize2, Setting2, Us
 import { TextComponent } from '../components';
 
 const TabSVNavigator = () => {
-    const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
     return (
         <Tab.Navigator screenOptions={({route}) => ({
             headerShown: false,

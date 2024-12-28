@@ -8,5 +8,4 @@ const SectionComponent = () => {
     </View>
   )
 }
-
 export default SectionComponent

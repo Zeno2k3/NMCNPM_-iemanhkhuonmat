@@ -1,4 +1,4 @@
-import {ImageBackground,  StatusBar,  View } from 'react-native'
+import {ActivityIndicator, Alert, ImageBackground,  StatusBar,  View } from 'react-native'
 import React, { useLayoutEffect, useState } from 'react'
 import { ButtonComponent, InputComponent, } from '../../components'
 import { Email, Login, Login2, } from '../../assets/svg'
@@ -7,26 +7,49 @@ import { appInfos } from '../../constants/appInfos'
 import SpaceComponent from '../../components/SpaceComponent'
 import { appColor } from '../../constants/appClor'
 import ToggleSwitch from 'toggle-switch-react-native'
-import AuthAPI from '../../apis/authApi'
 import authenticationAPI from '../../apis/authApi'
 
 const LoginScreen = ({navigation}: any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isEnabled, setIsEnabled] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [isSv , setisSv ] = useState(true);
   const handleCheckSV = () => {
     setIsEnabled(!isEnabled);
     setisSv(!isSv)
   }
+
+  const endpoint = isSv ? '/login' : '/loginGV';
+  
   const handleLogin = async () => {
-    try {
-      const res = await authenticationAPI.HandAuthentication('/hello')
-    } 
-    catch(error){
-      console.log(error)
+    if (!email || !password) {
+      Alert.alert('Thông báo', 'Vui lòng nhập đầy đủ email và mật khẩu');
+      return;
     }
-  }
+    setIsLoading(true);
+    try {
+      const res = await authenticationAPI.HandAuthentication(endpoint, { email, password }, 'post');
+      console.log(res);
+      Alert.alert(
+        'Thành công',
+        'Đăng nhập thành công',
+        [
+          {
+            text: 'OK',
+            onPress: () => isSv ? navigation.navigate('TabSVNavigatior') : navigation.navigate('TabGVNavigatior'),
+          },
+        ]
+      );
+    } catch (error) {
+      console.error(error);
+      Alert.alert('Lỗi', 'Đăng nhập thất bại. Vui lòng thử lại.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  
+
   useLayoutEffect(() => {
       navigation.getParent()?.setOptions({
         tabBarStyle: {display: 'none'},
@@ -108,13 +131,15 @@ const LoginScreen = ({navigation}: any) => {
             isPassWord
         />
           <SpaceComponent height={20}/>
-          <ButtonComponent text='Đăng Nhập' type='primary'onPress={() => {isSv ?  navigation.navigate('TabSVNavigatior'): navigation.navigate('TabGVNavigatior')}}/>
+          <ButtonComponent text='Đăng Nhập' type='primary'onPress={handleLogin}/>
           <ButtonComponent text='Quên mật khẩu' type='link' 
           onPress={() => navigation.navigate('EmailAdressScreen')}
           />
-          <ButtonComponent text='Test' type='link' 
-          onPress={handleLogin}
-          />
+          {isLoading ? (
+                <ActivityIndicator size="large" color="#0000ff" />
+            ) : (
+              <></>
+            )}
         </View>
       </ImageBackground>
     </>

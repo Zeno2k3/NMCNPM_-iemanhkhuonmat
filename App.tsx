@@ -1,9 +1,8 @@
-import { View, Text, StatusBar } from 'react-native'
+import { StatusBar } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { LoginScreen, SplashScreen } from './src/screens'
+import { SplashScreen } from './src/screens'
 import { NavigationContainer } from '@react-navigation/native'
 import { useAsyncStorage } from '@react-native-async-storage/async-storage'
-import TabNavigator from './src/navigators/TabSVNavigator'
 import AuthNavigator from './src/navigators/AuthNavigator'
 
 const App = () => {
@@ -18,9 +17,8 @@ const App = () => {
       setIsShownSplashScreen(false)
     },1500)
     checkLogin();
-    // ham huy
     return () => clearTimeout(timeout);
-  },[]) // chi chay 1 lan
+  },[]) 
   const checkLogin = async () => {
     const token = await getItem();
     if(token){

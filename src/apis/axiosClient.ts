@@ -1,9 +1,9 @@
 import axios from "axios";
 import queryString from 'query-string'
+
 const axiosClient = axios.create({
     paramsSerializer: params => queryString.stringify(params)
 });
-
 
 axiosClient.interceptors.request.use(async (config: any) => {
     config.headers = {
@@ -22,8 +22,9 @@ axiosClient.interceptors.response.use(res => {
     throw new Error('Error');
 },
 error => {
-    console.log(`Error api' ${JSON.stringify(error)}`);
+    console.log(`Error api${JSON.stringify(error)}`);
     throw new Error(error.response)
-})
+    }
+);
 
 export default axiosClient
