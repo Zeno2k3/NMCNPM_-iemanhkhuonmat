@@ -10,7 +10,7 @@ import ToggleSwitch from 'toggle-switch-react-native'
 import authenticationAPI from '../../apis/authApi'
 
 const LoginScreen = ({navigation}: any) => {
-  const [email, setEmail] = useState('');
+  const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const [isEnabled, setIsEnabled] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -20,17 +20,28 @@ const LoginScreen = ({navigation}: any) => {
     setisSv(!isSv)
   }
 
+  const placeHolder = isSv ? 'Mã số sinh viên' : 'Mã số giảng viên  ';
   const endpoint = isSv ? '/login' : '/loginGV';
-  
+
+
   const handleLogin = async () => {
-    if (!email || !password) {
-      Alert.alert('Thông báo', 'Vui lòng nhập đầy đủ email và mật khẩu');
+    if (!id || !password) {
+      Alert.alert('Thông báo', 'Vui lòng nhập đầy đủ mã số và mật khẩu');
       return;
     }
     setIsLoading(true);
     try {
-      const res = await authenticationAPI.HandAuthentication(endpoint, { email, password }, 'post');
-      console.log(res);
+      const payload = isSv 
+        ? { mssv: id, password }  // Cho sinh viên
+        : { maGV: id, password }; // Cho giảng viên
+
+      console.log('Sending request with:', { ...payload, endpoint });
+      const res = await authenticationAPI.HandAuthentication(
+        endpoint,
+        payload,
+        'post'
+      );
+      console.log('Response:', res);
       Alert.alert(
         'Thành công',
         'Đăng nhập thành công',
@@ -42,8 +53,16 @@ const LoginScreen = ({navigation}: any) => {
         ]
       );
     } catch (error) {
-      console.error(error);
-      Alert.alert('Lỗi', 'Đăng nhập thất bại. Vui lòng thử lại.');
+      console.log('Error details:', error);
+      Alert.alert(
+        'Lỗi',
+        'Đăng nhập không thành công !',
+        [
+          {
+            text: 'OK',
+          },
+        ]
+      );
     } finally {
       setIsLoading(false);
     }
@@ -117,9 +136,9 @@ const LoginScreen = ({navigation}: any) => {
           }}>
         <InputComponent
           icon_affix = {<Email/>}
-            value = {email}
-            onChange={val => setEmail(val)}
-            placeHolder='email'
+            value = {id}
+            onChange={val => setId(val)}
+            placeHolder= {placeHolder}
             allowClear
         />
         <SpaceComponent height={20} width={20}/>

@@ -1,7 +1,9 @@
 import axios from "axios";
 import queryString from 'query-string'
+import { appInfos } from "../constants/appInfos";
 
 const axiosClient = axios.create({
+    baseURL: appInfos.BASE_URL,
     paramsSerializer: params => queryString.stringify(params)
 });
 
@@ -11,19 +13,24 @@ axiosClient.interceptors.request.use(async (config: any) => {
         Accepet: 'application/json',
         ...config.headers
     }
-    config.data
     return config
 })
 
-axiosClient.interceptors.response.use(res => {
-    if(res.data && res.status === 200) {
-        return res.data
-    }
-    throw new Error('Error');
-},
-error => {
-    console.log(`Error api${JSON.stringify(error)}`);
-    throw new Error(error.response)
+axiosClient.interceptors.response.use(
+    res => {
+        if(res.data) {
+            return res.data;
+        }
+        return res;
+    },
+    error => {
+        console.log('Error details:', {
+            message: error.message,
+            response: error.response?.data,
+            status: error.response?.status,
+            config: error.config
+        });
+        throw error;
     }
 );
 
